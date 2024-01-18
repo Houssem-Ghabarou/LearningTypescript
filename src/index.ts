@@ -1,11 +1,13 @@
-function addAll(...nums: number[]): number {
-  let result = 0;
+//function
 
-  for (let i = 0; i < nums.length; i++) {
-    result += nums[i];
-  }
-
-  return result;
+function add(num1: number, num2: number): number {
+  return num1 + num2;
 }
 
-console.log(addAll(10, 20, 30, 10.5, +true));
+console.log(add(1, 2));
+// arrow function
+const addAlls = (num1: number, num2: number): number => {
+  return num1 + num2;
+};
+
+console.log(addAlls(1, 2));

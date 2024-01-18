@@ -1,10 +1,10 @@
 "use strict";
-function addAll(...nums) {
-    let result = 0;
-    for (let i = 0; i < nums.length; i++) {
-        result += nums[i];
-    }
-    return result;
+function add(num1, num2) {
+    return num1 + num2;
 }
-console.log(addAll(10, 20, 30, 10.5, +true));
+console.log(add(1, 2));
+const addAlls = (num1, num2) => {
+    return num1 + num2;
+};
+console.log(addAlls(1, 2));
 //# sourceMappingURL=index.js.map
