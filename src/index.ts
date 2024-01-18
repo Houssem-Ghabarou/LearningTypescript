@@ -1,13 +1,24 @@
-//tuples is sort of array which is fixed in length and type
+//procedure , void function
 
-let article: readonly [number, string, boolean] = [1, "hello", true];
+//never function ; never return anything
 
-article = [2, "world", false];
+function logging(msg: string): void {
+  console.log(msg);
+  return;
+}
 
-// article.push(3); // Error
+console.log(logging("Hello World"));
 
-console.log(article);
+const fail = (msg: string) => {
+  throw new Error(msg);
+  return 1;
+};
 
-const [id, title, published] = article;
+function alwaysLog(name: string): never {
+  while (true) {
+    console.log(name);
+  }
+}
 
-console.log(id, title, published);
+alwaysLog("Hello World");
+console.log("houssem");
