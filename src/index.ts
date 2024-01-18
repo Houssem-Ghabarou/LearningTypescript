@@ -1,24 +1,19 @@
-//procedure , void function
+// enum type
 
-//never function ; never return anything
+const EASY = 15;
+const MEDIUM = 10;
+const HARD = 5;
 
-function logging(msg: string): void {
-  console.log(msg);
-  return;
+enum level {
+  Easy = 15,
+  Medium = 10,
+  Hard = 5,
 }
 
-console.log(logging("Hello World"));
+let lvl: string = "Easy";
 
-const fail = (msg: string) => {
-  throw new Error(msg);
-  return 1;
-};
-
-function alwaysLog(name: string): never {
-  while (true) {
-    console.log(name);
-  }
+if (lvl === "Easy") {
+  console.log(
+    `The level is ${lvl} and the the number of second is ${level.Easy}`
+  );
 }
-
-alwaysLog("Hello World");
-console.log("houssem");

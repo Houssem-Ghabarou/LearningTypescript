@@ -1,18 +1,15 @@
 "use strict";
-function logging(msg) {
-    console.log(msg);
-    return;
+const EASY = 15;
+const MEDIUM = 10;
+const HARD = 5;
+var level;
+(function (level) {
+    level[level["Easy"] = 15] = "Easy";
+    level[level["Medium"] = 10] = "Medium";
+    level[level["Hard"] = 5] = "Hard";
+})(level || (level = {}));
+let lvl = "Easy";
+if (lvl === "Easy") {
+    console.log(`The level is ${lvl} and the the number of second is ${level.Easy}`);
 }
-console.log(logging("Hello World"));
-const fail = (msg) => {
-    throw new Error(msg);
-    return 1;
-};
-function alwaysLog(name) {
-    while (true) {
-        console.log(name);
-    }
-}
-alwaysLog("Hello World");
-console.log("houssem");
 //# sourceMappingURL=index.js.map
