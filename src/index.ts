@@ -1,13 +1,5 @@
-//function
+type st = string;
 
-function add(num1: number, num2: number): number {
-  return num1 + num2;
-}
+let theName: st = "hello";
 
-console.log(add(1, 2));
-// arrow function
-const addAlls = (num1: number, num2: number): number => {
-  return num1 + num2;
-};
-
-console.log(addAlls(1, 2));
+theName = "houssem";
