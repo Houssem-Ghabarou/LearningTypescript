@@ -1,5 +1,18 @@
-type st = string;
+type button = {
+  up: string;
+  down: string;
+  left: string;
+  right: string;
+};
 
-let theName: st = "hello";
+type last = button & {
+  x: boolean;
+};
+function getActions(btns: last) {
+  console.log(btns.up);
+  console.log(btns.down);
+  console.log(btns.left);
+  console.log(btns.right);
+}
 
-theName = "houssem";
+getActions({ up: "up", down: "down", left: "left", right: "right", x: true });
