@@ -1,9 +1,7 @@
 "use strict";
-function getActions(btns) {
-    console.log(btns.up);
-    console.log(btns.down);
-    console.log(btns.left);
-    console.log(btns.right);
-}
-getActions({ up: "up", down: "down", left: "left", right: "right", x: true });
+let article = [1, "hello", true];
+article = [2, "world", false];
+console.log(article);
+const [id, title, published] = article;
+console.log(id, title, published);
 //# sourceMappingURL=index.js.map

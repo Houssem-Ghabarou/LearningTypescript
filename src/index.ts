@@ -1,18 +1,13 @@
-type button = {
-  up: string;
-  down: string;
-  left: string;
-  right: string;
-};
+//tuples is sort of array which is fixed in length and type
 
-type last = button & {
-  x: boolean;
-};
-function getActions(btns: last) {
-  console.log(btns.up);
-  console.log(btns.down);
-  console.log(btns.left);
-  console.log(btns.right);
-}
+let article: readonly [number, string, boolean] = [1, "hello", true];
 
-getActions({ up: "up", down: "down", left: "left", right: "right", x: true });
+article = [2, "world", false];
+
+// article.push(3); // Error
+
+console.log(article);
+
+const [id, title, published] = article;
+
+console.log(id, title, published);
