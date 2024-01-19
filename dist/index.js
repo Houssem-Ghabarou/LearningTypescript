@@ -1,22 +1,28 @@
 "use strict";
-function returnType(val) {
-    return val;
+class User {
+    constructor(value) {
+        this.value = value;
+    }
+    show(msg) {
+        console.log(`this is the msg ${msg} and the value is ${this.value} `);
+    }
 }
-const returnArrowType = (val) => {
-    return val;
-};
-const test = (val) => {
-    return `the value is ${val} and the type is ${typeof val}`;
-};
-console.log(returnType(100));
-console.log(returnType("houssem"));
-console.log(returnType(true));
-console.log(returnType([100, 200, 300, 400]));
-console.log(test(500));
-console.log(test("houssem"));
-const multipleValues = (val1, val2) => {
-    return `the first value is ${val1} and the second value is ${val2}`;
-};
-console.log(multipleValues(500, true));
-console.log(multipleValues("houssem", [1, 2, 3]));
+let userOne = new User("houssem");
+console.log(userOne.value);
+userOne.show("this is user 1");
+let userTwo = new User(100);
+console.log(userTwo.value);
+userTwo.show("this is user 2");
+class Collection {
+    constructor() {
+        this.data = [];
+    }
+    add(item) {
+        this.data.push(item);
+    }
+}
+let collectionOne = new Collection();
+collectionOne.add({ title: "BookHoussem", price: 500, isbn: "85" });
+collectionOne.add({ title: "BookNour", price: 600, isbn: "99" });
+console.log(collectionOne);
 //# sourceMappingURL=index.js.map

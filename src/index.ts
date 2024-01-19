@@ -1,26 +1,36 @@
-//Generics
+class User<T = string> {
+  constructor(public value: T) {}
 
-function returnType<T>(val: T): T {
-  return val;
+  show(msg: T): void {
+    console.log(`this is the msg ${msg} and the value is ${this.value} `);
+  }
 }
 
-const returnArrowType = <T>(val: T): T => {
-  return val;
-};
+let userOne = new User("houssem");
+console.log(userOne.value);
+userOne.show("this is user 1");
 
-const test = <T>(val: T): string => {
-  return `the value is ${val} and the type is ${typeof val}`;
-};
-console.log(returnType<number>(100));
-console.log(returnType<string>("houssem"));
-console.log(returnType<boolean>(true));
-console.log(returnType<number[]>([100, 200, 300, 400]));
+let userTwo = new User<number | string>(100);
+console.log(userTwo.value);
+userTwo.show("this is user 2");
 
-console.log(test<number>(500));
-console.log(test<string>("houssem"));
-const multipleValues = <T, S>(val1: T, val2: S): string => {
-  return `the first value is ${val1} and the second value is ${val2}`;
-};
+//generic interfaces
 
-console.log(multipleValues<number, boolean>(500, true));
-console.log(multipleValues<string, number[]>("houssem", [1, 2, 3]));
+interface Book {
+  title: string;
+  price: number;
+  isbn: string;
+}
+class Collection<T> {
+  public data: T[] = [];
+  add(item: T): void {
+    this.data.push(item);
+  }
+}
+
+let collectionOne = new Collection<Book>();
+
+collectionOne.add({ title: "BookHoussem", price: 500, isbn: "85" });
+collectionOne.add({ title: "BookNour", price: 600, isbn: "99" });
+
+console.log(collectionOne);
