@@ -1,30 +1,30 @@
-//class implements interface
+//abstract calss
 
-interface Settings {
-  theme: boolean;
-  font: string;
-  save(): void;
+abstract class Food {
+  constructor(public title: string) {}
+  abstract getCookingTime(): void;
 }
 
-class User implements Settings {
-  constructor(
-    public username: string,
-    public theme: boolean,
-    public font: string
-  ) {}
-  save(): void {
-    console.log("saved");
+class Pizza extends Food {
+  constructor(title: string, public price: number) {
+    super(title);
   }
-
-  update(): void {
-    console.log("update");
+  getCookingTime(): void {
+    console.log("cooking time for pizza is 30Mins");
   }
 }
 
-let userOne = new User("houssem", true, "Open sans");
+class Burger extends Food {
+  constructor(title: string, public price: number, public location: string) {
+    super(title);
+  }
+  getCookingTime(): void {
+    console.log("cooking time for Burger is 15Mins");
+  }
+}
 
-console.log(userOne.username);
-console.log(userOne.font);
+let pizza = new Pizza("neptune", 500);
 
-userOne.save();
-userOne.update();
+console.log(pizza.title);
+console.log(pizza.price);
+pizza.getCookingTime();
