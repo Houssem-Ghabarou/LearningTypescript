@@ -1,30 +1,36 @@
-//abstract calss
+//polymorphism
 
-abstract class Food {
-  constructor(public title: string) {}
-  abstract getCookingTime(): void;
-}
-
-class Pizza extends Food {
-  constructor(title: string, public price: number) {
-    super(title);
-  }
-  getCookingTime(): void {
-    console.log("cooking time for pizza is 30Mins");
+class Player {
+  constructor(public name: string) {}
+  attack(): void {
+    console.log("attacking now");
   }
 }
 
-class Burger extends Food {
-  constructor(title: string, public price: number, public location: string) {
-    super(title);
+class Draven extends Player {
+  constructor(name: string, public axeDurability: number) {
+    super(name);
   }
-  getCookingTime(): void {
-    console.log("cooking time for Burger is 15Mins");
+  override attack(): void {
+    // super.attack();
+    console.log("attacking now with axe");
+    this.axeDurability = this.axeDurability - 1;
   }
 }
 
-let pizza = new Pizza("neptune", 500);
+class Jinx extends Player {
+  constructor(name: string, public gun: number) {
+    super(name);
+  }
+  override attack(): void {
+    // super.attack();
+    console.log("attacking now with gun");
+    this.gun = this.gun - 1;
+  }
+}
 
-console.log(pizza.title);
-console.log(pizza.price);
-pizza.getCookingTime();
+let dravenPlayer = new Draven("DravenFrontline", 500);
+
+console.log(dravenPlayer.name);
+dravenPlayer.attack();
+console.log(dravenPlayer.axeDurability);

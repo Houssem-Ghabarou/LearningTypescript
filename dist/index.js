@@ -1,30 +1,34 @@
 "use strict";
-class Food {
-    constructor(title) {
-        this.title = title;
+class Player {
+    constructor(name) {
+        this.name = name;
+    }
+    attack() {
+        console.log("attacking now");
     }
 }
-class Pizza extends Food {
-    constructor(title, price) {
-        super(title);
-        this.price = price;
+class Draven extends Player {
+    constructor(name, axeDurability) {
+        super(name);
+        this.axeDurability = axeDurability;
     }
-    getCookingTime() {
-        console.log("cooking time for pizza is 30Mins");
-    }
-}
-class Burger extends Food {
-    constructor(title, price, location) {
-        super(title);
-        this.price = price;
-        this.location = location;
-    }
-    getCookingTime() {
-        console.log("cooking time for Burger is 15Mins");
+    attack() {
+        console.log("attacking now with axe");
+        this.axeDurability = this.axeDurability - 1;
     }
 }
-let pizza = new Pizza("neptune", 500);
-console.log(pizza.title);
-console.log(pizza.price);
-pizza.getCookingTime();
+class Jinx extends Player {
+    constructor(name, gun) {
+        super(name);
+        this.gun = gun;
+    }
+    attack() {
+        console.log("attacking now with gun");
+        this.gun = this.gun - 1;
+    }
+}
+let dravenPlayer = new Draven("DravenFrontline", 500);
+console.log(dravenPlayer.name);
+dravenPlayer.attack();
+console.log(dravenPlayer.axeDurability);
 //# sourceMappingURL=index.js.map
