@@ -1,34 +1,22 @@
 "use strict";
-class Player {
-    constructor(name) {
-        this.name = name;
-    }
-    attack() {
-        console.log("attacking now");
-    }
+function returnType(val) {
+    return val;
 }
-class Draven extends Player {
-    constructor(name, axeDurability) {
-        super(name);
-        this.axeDurability = axeDurability;
-    }
-    attack() {
-        console.log("attacking now with axe");
-        this.axeDurability = this.axeDurability - 1;
-    }
-}
-class Jinx extends Player {
-    constructor(name, gun) {
-        super(name);
-        this.gun = gun;
-    }
-    attack() {
-        console.log("attacking now with gun");
-        this.gun = this.gun - 1;
-    }
-}
-let dravenPlayer = new Draven("DravenFrontline", 500);
-console.log(dravenPlayer.name);
-dravenPlayer.attack();
-console.log(dravenPlayer.axeDurability);
+const returnArrowType = (val) => {
+    return val;
+};
+const test = (val) => {
+    return `the value is ${val} and the type is ${typeof val}`;
+};
+console.log(returnType(100));
+console.log(returnType("houssem"));
+console.log(returnType(true));
+console.log(returnType([100, 200, 300, 400]));
+console.log(test(500));
+console.log(test("houssem"));
+const multipleValues = (val1, val2) => {
+    return `the first value is ${val1} and the second value is ${val2}`;
+};
+console.log(multipleValues(500, true));
+console.log(multipleValues("houssem", [1, 2, 3]));
 //# sourceMappingURL=index.js.map

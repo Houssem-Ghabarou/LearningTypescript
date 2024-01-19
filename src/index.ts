@@ -1,36 +1,26 @@
-//polymorphism
+//Generics
 
-class Player {
-  constructor(public name: string) {}
-  attack(): void {
-    console.log("attacking now");
-  }
+function returnType<T>(val: T): T {
+  return val;
 }
 
-class Draven extends Player {
-  constructor(name: string, public axeDurability: number) {
-    super(name);
-  }
-  override attack(): void {
-    // super.attack();
-    console.log("attacking now with axe");
-    this.axeDurability = this.axeDurability - 1;
-  }
-}
+const returnArrowType = <T>(val: T): T => {
+  return val;
+};
 
-class Jinx extends Player {
-  constructor(name: string, public gun: number) {
-    super(name);
-  }
-  override attack(): void {
-    // super.attack();
-    console.log("attacking now with gun");
-    this.gun = this.gun - 1;
-  }
-}
+const test = <T>(val: T): string => {
+  return `the value is ${val} and the type is ${typeof val}`;
+};
+console.log(returnType<number>(100));
+console.log(returnType<string>("houssem"));
+console.log(returnType<boolean>(true));
+console.log(returnType<number[]>([100, 200, 300, 400]));
 
-let dravenPlayer = new Draven("DravenFrontline", 500);
+console.log(test<number>(500));
+console.log(test<string>("houssem"));
+const multipleValues = <T, S>(val1: T, val2: S): string => {
+  return `the first value is ${val1} and the second value is ${val2}`;
+};
 
-console.log(dravenPlayer.name);
-dravenPlayer.attack();
-console.log(dravenPlayer.axeDurability);
+console.log(multipleValues<number, boolean>(500, true));
+console.log(multipleValues<string, number[]>("houssem", [1, 2, 3]));
