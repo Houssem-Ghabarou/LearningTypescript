@@ -1,26 +1,30 @@
-// enum type
+//class implements interface
 
-function getHardSeconds(): number {
-  return 3;
+interface Settings {
+  theme: boolean;
+  font: string;
+  save(): void;
 }
 
-enum Kids {
-  Five = 25,
-  Seven = 20,
-  Ten = 16,
-}
-enum level {
-  Insane,
-  Kid = Kids.Ten,
-  Easy = 9,
-  Medium = Easy - 3,
-  Hard = getHardSeconds(),
+class User implements Settings {
+  constructor(
+    public username: string,
+    public theme: boolean,
+    public font: string
+  ) {}
+  save(): void {
+    console.log("saved");
+  }
+
+  update(): void {
+    console.log("update");
+  }
 }
 
-let lvl: string = "Easy";
+let userOne = new User("houssem", true, "Open sans");
 
-if (lvl === "Easy") {
-  console.log(
-    `The level is ${lvl} and the the number of second is ${level.Hard}`
-  );
-}
+console.log(userOne.username);
+console.log(userOne.font);
+
+userOne.save();
+userOne.update();
